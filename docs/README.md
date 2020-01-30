@@ -9,8 +9,11 @@ It can also lock up specific images and videos. It also includes uninstall prote
 
 
 ## Intended users
+ 1. moms, families
+ 2. young adults.
+ 3. students.
  
-3. [user-stories](./user-stories.md)
+  ##[user-stories](./user-stories.md)
 
 
 ## External Services/data
