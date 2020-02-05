@@ -9,22 +9,14 @@ It can also lock up specific images and videos. It also includes uninstall prote
 
 
 ## Intended users
- 1. moms, families
- 2. young adults.
- 3. students.
+ 1. families who share a device with within the household.
+ 2. students.
+ 3. public devices.
  
- ## [Entity Relationship Diagram](ERD.png)
+ ## External Services/data
+Google System (Key pad, Keyboard)
+
  
-  ## [user-stories](./user-stories.md)
-
-
-## External Services/data
-
-Google play services 
-Android apps managment.
-
-## [WireFrame PNG](wireframe.png)
-## [WireFrame PDF](wireframe.pdf)
-
-
----
+ ## [User Stories](./user-stories.md)
+ ## [Wire Frame](wireframe.md)
+ ## [Entity Relationship Diagram](erd.md)
