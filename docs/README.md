@@ -21,7 +21,7 @@ It can also lock up specific images and videos. It also includes uninstall prote
 Google play services 
 Android apps managment.
 
-
+## [WireFrame](wireframe.png)
 
 
 ---
