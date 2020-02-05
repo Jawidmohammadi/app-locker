@@ -15,9 +15,13 @@ It can also lock up specific images and videos. It also includes uninstall prote
  
 ## External Services/data
  
-* Android System Apps (Key pad, Keyboard, launcher)
-* Email Services(google mail)
-* Other apps installed in the Device!
+## Android System Apps (Key pad, Keyboard, launcher)
+## [Android keystore system](https://developer.android.com/training/articles/keystore)
+We can use Kyestore system to  store our encrypted password and pins. 
+## [Android Device Administration Api](https://developer.android.com/reference/android/app/admin/DeviceAdminService?hl=en)
+This service allow the application to run in the background, so that way the app locker is always being running in the background, so when a person want to enter to an application that has been locked it should ask for the pin or password that applied through the App Locker application
+
+## Other apps installed in the Device!
 
 
 ## [User Stories](./user-stories.md)
