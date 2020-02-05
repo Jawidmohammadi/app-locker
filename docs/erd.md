@@ -1,1 +1,1 @@
-[![Entity Relationship Diagram](erd.png)]
+[![Entity Relationship Diagram](erd.png)](erd.pdf)
