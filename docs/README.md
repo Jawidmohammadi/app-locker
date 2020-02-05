@@ -13,7 +13,8 @@ It can also lock up specific images and videos. It also includes uninstall prote
  2. students.
  3. public devices.
  
- ## External Services/data
+## External Services/data
+ 
 Google System (Key pad, Keyboard)
 
 ## [User Stories](./user-stories.md)
