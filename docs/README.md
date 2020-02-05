@@ -16,9 +16,6 @@ It can also lock up specific images and videos. It also includes uninstall prote
  ## External Services/data
 Google System (Key pad, Keyboard)
 
- 
- ## [User Stories](./user-stories.md)
- 
- ## [Wire Frame](wireframe.md)
- 
- ## [Entity Relationship Diagram](erd.md)
+## [User Stories](./user-stories.md)
+## [Wire Frame](wireframe.md)
+## [Entity Relationship Diagram](erd.md)
