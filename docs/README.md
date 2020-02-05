@@ -13,6 +13,8 @@ It can also lock up specific images and videos. It also includes uninstall prote
  2. young adults.
  3. students.
  
+ ## [Entity Relationship Diagram](ERD.png)
+ 
   ## [user-stories](./user-stories.md)
 
 
