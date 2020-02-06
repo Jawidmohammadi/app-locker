@@ -10,6 +10,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //pasted from slack this 3 lines
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -17,11 +23,59 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    // this is what tells our project that go ahead and use Java 8. copied from slack
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    // click on above and alt enter to update on 1.1
+    // test should be down below for the most part it doesnt matter keep it organized that it make sense to you.
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //inserted a constraint layout.
+// Navigation fragment dependencies navigation between two task it is an external librarie that we are gonna be using
+    def navigation_version = "2.2.0"
+    implementation "androidx.navigation:navigation-fragment:$navigation_version"
+    implementation "androidx.navigation:navigation-ui:$navigation_version"
+
+    // live data  view model - related dependencies
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // material design-related dependencies.
+    implementation 'com.google.android.material:material:1.1.0'
+
+    // ReactiveX-related dependencies.
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // Use of ROom ORM Object Relational Mapping Library Sql lite dependencies will be automatically added cause room itself is dependent on Sql lite dependencies.
+    //Room and SQL Lite
+    def room_version = "2.2.3"
+    implementation "androidx.room:room-runtime:$room_version" // lets room use reactiveX
+    implementation 'androidx.navigation:navigation-fragment:2.2.0'
+    implementation 'androidx.navigation:navigation-ui:2.2.0'
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // uses room based on our annotation
+    implementation "androidx.room:room-rxjava2:$room_version"   // uses room at run time
+
+    //Stetho (inspection) Dependency
+    implementation 'com.facebook.stetho:stetho:1.5.1'   // to use chrome development tool
+
+    // JSON (JavaScript Object notation ) Dependency to parse JSON Data
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+
+    // only if we are going to use an external service via http we are gonna use this dependency
+    // Retrofit (HTTP client) Dependency downlaod the images and save them locally.
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    def retrofit_version = "2.6.2"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
