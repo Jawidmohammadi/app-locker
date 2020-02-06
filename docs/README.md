@@ -19,7 +19,7 @@ It also includes uninstall protection, and you can even lock stuff like incoming
 2.	## [Android keystore system](https://developer.android.com/training/articles/keystore)
 We can use Kyestore system to  store our encrypted password and pins. 
 3.	## [Android Device Administration Api](https://developer.android.com/reference/android/app/admin/DeviceAdminService?hl=en)
-This service allow the application to run in the background, so that way the app locker is always being running in the background, so when a person want to enter to an application that has been locked it should ask for the pin or password that applied through the App Locker application
+This service allows the application to run in the background, so that way the app locker is always being running in the background, so when a person want to enter to an application that has been locked it should ask for the pin or password that applied through the App Locker application
 
 4.	## Other apps installed in the Device!
 
