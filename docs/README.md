@@ -1,11 +1,11 @@
 ## Title
 
-* Fingerprint,Pin and Password Authenticated Secure Android Apps
+* Pin and Password Authenticated Secure Android Apps
 
 ## Description
 
 This System is Simple but a smart application used to secure our Android app via Pin, Password, Finger Print Authentication. Smartphones nowadays contain a lot of sensitive data. Our banking apps, note-taking apps, gallery apps, etc.
-It can also lock up specific images and videos. It also includes uninstall protection, and you can even lock stuff like incoming calls, uninstalling apps, Messages.
+It also includes uninstall protection, and you can even lock stuff like incoming calls, uninstalling apps, Messages.
 
 
 ## Intended users
@@ -15,7 +15,7 @@ It can also lock up specific images and videos. It also includes uninstall prote
  
 ## External Services/data
  
-1.	## Android System Apps (Key pad, Keyboard, launcher)
+1.	## [Android System (Manifest permission group) (Storage, Launcher, Calendar)](https://developer.android.com/reference/android/Manifest.permission_group.html#ACTIVITY_RECOGNITION)
 2.	## [Android keystore system](https://developer.android.com/training/articles/keystore)
 We can use Kyestore system to  store our encrypted password and pins. 
 3.	## [Android Device Administration Api](https://developer.android.com/reference/android/app/admin/DeviceAdminService?hl=en)
