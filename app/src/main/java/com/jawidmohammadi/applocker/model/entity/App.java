@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey;
 
     }
 )
-public class Application {
+public class App {
 
   @ColumnInfo(name = "application_id")
   @PrimaryKey(autoGenerate = true)
@@ -23,8 +23,16 @@ public class Application {
   @ColumnInfo(name = "restriction_method", collate = ColumnInfo.NOCASE)
   private String restrictionMethod;
 
-  @ColumnInfo(name = "Hashed Password", index = true)
-  private String hash;
+  @ColumnInfo(name = "hashed_password", index = true)
+  private String hashedPassword;
+
+  public String getHashedPassword() {
+    return hashedPassword;
+  }
+
+  public void setHashedPassword(String hashedPassword) {
+    this.hashedPassword = hashedPassword;
+  }
 
   public long getId() {
     return id;

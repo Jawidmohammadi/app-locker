@@ -1,0 +1,144 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "fcdbe904080c77dbae17c0e81fa610e2",
+    "entities": [
+      {
+        "tableName": "App",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `package` TEXT COLLATE NOCASE, `restriction_method` TEXT COLLATE NOCASE, `hashed_password` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "application_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pkg",
+            "columnName": "package",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "restrictionMethod",
+            "columnName": "restriction_method",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hashedPassword",
+            "columnName": "hashed_password",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "application_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_App_package",
+            "unique": true,
+            "columnNames": [
+              "package"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_App_package` ON `${TABLE_NAME}` (`package`)"
+          },
+          {
+            "name": "index_App_hashed_password",
+            "unique": false,
+            "columnNames": [
+              "hashed_password"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_App_hashed_password` ON `${TABLE_NAME}` (`hashed_password`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Attempt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`attempt_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `application_id` INTEGER NOT NULL, `time_stamp` INTEGER, `success` INTEGER NOT NULL, FOREIGN KEY(`application_id`) REFERENCES `App`(`application_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "attempt_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "applicationId",
+            "columnName": "application_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeStamp",
+            "columnName": "time_stamp",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "success",
+            "columnName": "success",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "attempt_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Attempt_application_id",
+            "unique": false,
+            "columnNames": [
+              "application_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Attempt_application_id` ON `${TABLE_NAME}` (`application_id`)"
+          },
+          {
+            "name": "index_Attempt_time_stamp",
+            "unique": false,
+            "columnNames": [
+              "time_stamp"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Attempt_time_stamp` ON `${TABLE_NAME}` (`time_stamp`)"
+          },
+          {
+            "name": "index_Attempt_success",
+            "unique": false,
+            "columnNames": [
+              "success"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Attempt_success` ON `${TABLE_NAME}` (`success`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "App",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "application_id"
+            ],
+            "referencedColumns": [
+              "application_id"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fcdbe904080c77dbae17c0e81fa610e2')"
+    ]
+  }
+}

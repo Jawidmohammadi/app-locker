@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity(
     foreignKeys = {
         @ForeignKey(
-            entity = Application.class,
+            entity = App.class,
             parentColumns = "application_id",
             childColumns = "application_id",
             onDelete = ForeignKey.CASCADE
@@ -23,7 +23,7 @@ public class Attempt {
   @PrimaryKey(autoGenerate = true)
   private long id;
 
-  @ColumnInfo(name = "applicaton_id", index = true)
+  @ColumnInfo(name = "application_id", index = true)
   private long applicationId;
 
   @ColumnInfo(name = "time_stamp", index = true)
