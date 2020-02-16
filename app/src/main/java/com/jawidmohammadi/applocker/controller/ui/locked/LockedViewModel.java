@@ -1,16 +1,16 @@
-package com.jawidmohammadi.applocker.controller.ui.home;
+package com.jawidmohammadi.applocker.controller.ui.locked;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class LockedViewModel extends ViewModel {
 
   private MutableLiveData<String> mText;
 
-  public HomeViewModel() {
+  public LockedViewModel() {
     mText = new MutableLiveData<>();
-    mText.setValue("This is home fragment");
+    mText.setValue("This is dashboard fragment");
   }
 
   public LiveData<String> getText() {

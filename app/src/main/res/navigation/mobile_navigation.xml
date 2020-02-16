@@ -3,23 +3,29 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/mobile_navigation"
-  app:startDestination="@+id/navigation_home">
+  app:startDestination="@+id/navigation_locked">
 
   <fragment
-    android:id="@+id/navigation_home"
-    android:label="@string/title_home"
-    android:name="com.jawidmohammadi.applocker.controller.ui.home.HomeFragment"
-    tools:layout="@layout/fragment_home"/>
+    android:id="@+id/navigation_apps"
+    android:label="@string/title_apps"
+    android:name="com.jawidmohammadi.applocker.controller.ui.apps.AppsFragment"
+    tools:layout="@layout/fragment_apps"/>
 
   <fragment
-    android:id="@+id/navigation_dashboard"
-    android:label="@string/title_dashboard"
-    android:name="com.jawidmohammadi.applocker.controller.ui.dashboard.DashboardFragment"
-    tools:layout="@layout/fragment_dashboard"/>
+    android:id="@+id/navigation_locked"
+    android:label="@string/title_locked"
+    android:name="com.jawidmohammadi.applocker.controller.ui.locked.LockedFragment"
+    tools:layout="@layout/fragment_locked"/>
 
   <fragment
-    android:id="@+id/navigation_notifications"
-    android:label="@string/title_notifications"
-    android:name="com.jawidmohammadi.applocker.controller.ui.notifications.NotificationsFragment"
-    tools:layout="@layout/fragment_notifications"/>
+    android:id="@+id/navigation_privacy"
+    android:label="@string/title_privacy"
+    android:name="com.jawidmohammadi.applocker.controller.ui.privacy.PrivacyFragment"
+    tools:layout="@layout/fragment_privacy"/>
+
+  <fragment
+    android:id="@+id/navigation_settings"
+    android:label="@string/title_settings"
+    android:name="com.jawidmohammadi.applocker.controller.ui.settings.SettingsFragment"
+    tools:layout="@layout/fragment_settings"/>
 </navigation>

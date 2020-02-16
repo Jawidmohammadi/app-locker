@@ -1,4 +1,4 @@
-package com.jawidmohammadi.applocker.controller.ui.home;
+package com.jawidmohammadi.applocker.controller.ui.locked;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,17 +13,17 @@ import androidx.lifecycle.ViewModelProviders;
 import com.jawidmohammadi.applocker.R;
 
 
-public class HomeFragment extends Fragment {
+public class LockedFragment extends Fragment {
 
-  private HomeViewModel homeViewModel;
+  private LockedViewModel lockedViewModel;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
-    homeViewModel =
-        ViewModelProviders.of(this).get(HomeViewModel.class);
-    View root = inflater.inflate(R.layout.fragment_home, container, false);
-    final TextView textView = root.findViewById(R.id.text_home);
-    homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+    lockedViewModel =
+        ViewModelProviders.of(this).get(LockedViewModel.class);
+    View root = inflater.inflate(R.layout.fragment_locked, container, false);
+    final TextView textView = root.findViewById(R.id.text_dashboard);
+    lockedViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
       @Override
       public void onChanged(@Nullable String s) {
         textView.setText(s);

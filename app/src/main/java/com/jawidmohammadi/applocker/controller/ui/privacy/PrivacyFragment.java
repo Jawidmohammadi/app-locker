@@ -1,4 +1,4 @@
-package com.jawidmohammadi.applocker.controller.ui.dashboard;
+package com.jawidmohammadi.applocker.controller.ui.privacy;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,17 +13,17 @@ import androidx.lifecycle.ViewModelProviders;
 import com.jawidmohammadi.applocker.R;
 
 
-public class DashboardFragment extends Fragment {
+public class PrivacyFragment extends Fragment {
 
-  private DashboardViewModel dashboardViewModel;
+  private PrivacyViewModel privacyViewModel;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
-    dashboardViewModel =
-        ViewModelProviders.of(this).get(DashboardViewModel.class);
-    View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-    final TextView textView = root.findViewById(R.id.text_dashboard);
-    dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+    privacyViewModel =
+        ViewModelProviders.of(this).get(PrivacyViewModel.class);
+    View root = inflater.inflate(R.layout.fragment_privacy, container, false);
+    final TextView textView = root.findViewById(R.id.text_notifications);
+    privacyViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
       @Override
       public void onChanged(@Nullable String s) {
         textView.setText(s);

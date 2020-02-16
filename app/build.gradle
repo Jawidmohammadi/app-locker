@@ -38,7 +38,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     //inserted a constraint layout.
 // Navigation fragment dependencies navigation between two task it is an external librarie that we are gonna be using
-    def navigation_version = "2.2.0"
+    def navigation_version = "2.2.1"
     implementation "androidx.navigation:navigation-fragment:$navigation_version"
     implementation "androidx.navigation:navigation-ui:$navigation_version"
 

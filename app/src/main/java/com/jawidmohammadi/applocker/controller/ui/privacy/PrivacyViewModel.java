@@ -1,14 +1,14 @@
-package com.jawidmohammadi.applocker.controller.ui.notifications;
+package com.jawidmohammadi.applocker.controller.ui.privacy;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class PrivacyViewModel extends ViewModel {
 
   private MutableLiveData<String> mText;
 
-  public NotificationsViewModel() {
+  public PrivacyViewModel() {
     mText = new MutableLiveData<>();
     mText.setValue("This is notifications fragment");
   }
