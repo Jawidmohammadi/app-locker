@@ -26,6 +26,16 @@ public class App {
   @ColumnInfo(name = "hashed_password", index = true)
   private String hashedPassword;
 
+  private String salt;
+
+  public String getSalt() {
+    return salt;
+  }
+
+  public void setSalt(String salt) {
+    this.salt = salt;
+  }
+
   public String getHashedPassword() {
     return hashedPassword;
   }

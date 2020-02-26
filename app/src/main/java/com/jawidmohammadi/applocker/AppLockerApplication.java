@@ -2,6 +2,7 @@ package com.jawidmohammadi.applocker;
 
 import android.app.Application;
 import com.facebook.stetho.Stetho;
+import com.jawidmohammadi.applocker.model.repository.AppRepository;
 import com.jawidmohammadi.applocker.services.AppLockerDatabase;
 import io.reactivex.schedulers.Schedulers;
 
@@ -13,7 +14,7 @@ public class AppLockerApplication  extends Application {
   public void onCreate() {
     super.onCreate();
     Stetho.initializeWithDefaults(this);
-
+    AppRepository.setContext(this);
     AppLockerDatabase.setContext(this);
     AppLockerDatabase.getInstance().getApplicationDao().delete()
         .subscribeOn(Schedulers.io())

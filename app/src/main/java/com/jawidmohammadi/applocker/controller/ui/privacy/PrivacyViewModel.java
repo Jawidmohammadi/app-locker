@@ -10,7 +10,7 @@ public class PrivacyViewModel extends ViewModel {
 
   public PrivacyViewModel() {
     mText = new MutableLiveData<>();
-    mText.setValue("This is notifications fragment");
+    mText.setValue("This is Privacy fragment");
   }
 
   public LiveData<String> getText() {

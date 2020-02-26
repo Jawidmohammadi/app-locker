@@ -3,13 +3,20 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/mobile_navigation"
-  app:startDestination="@+id/navigation_locked">
+  app:startDestination="@id/navigation_apps">
 
   <fragment
     android:id="@+id/navigation_apps"
     android:label="@string/title_apps"
     android:name="com.jawidmohammadi.applocker.controller.ui.apps.AppsFragment"
-    tools:layout="@layout/fragment_apps"/>
+    tools:layout="@layout/fragment_apps">
+    <action
+      android:id="@+id/action_navigation_apps_to_navigation_privacy"
+      app:destination="@id/navigation_privacy"/>
+    <action
+      android:id="@+id/action_navigation_apps_to_navigation_settings"
+      app:destination="@id/navigation_settings"/>
+  </fragment>
 
   <fragment
     android:id="@+id/navigation_locked"

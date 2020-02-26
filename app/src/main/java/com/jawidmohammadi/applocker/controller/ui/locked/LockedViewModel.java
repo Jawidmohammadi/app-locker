@@ -10,7 +10,7 @@ public class LockedViewModel extends ViewModel {
 
   public LockedViewModel() {
     mText = new MutableLiveData<>();
-    mText.setValue("This is dashboard fragment");
+    mText.setValue("This is Locked fragment");
   }
 
   public LiveData<String> getText() {
