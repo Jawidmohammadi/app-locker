@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "fcdbe904080c77dbae17c0e81fa610e2",
+    "identityHash": "712077a4df1031bc5f01a70ef9df1207",
     "entities": [
       {
         "tableName": "App",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `package` TEXT COLLATE NOCASE, `restriction_method` TEXT COLLATE NOCASE, `hashed_password` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `package` TEXT COLLATE NOCASE, `restriction_method` TEXT COLLATE NOCASE, `hashed_password` TEXT, `salt` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -29,6 +29,12 @@
           {
             "fieldPath": "hashedPassword",
             "columnName": "hashed_password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "salt",
+            "columnName": "salt",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -138,7 +144,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fcdbe904080c77dbae17c0e81fa610e2')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '712077a4df1031bc5f01a70ef9df1207')"
     ]
   }
 }

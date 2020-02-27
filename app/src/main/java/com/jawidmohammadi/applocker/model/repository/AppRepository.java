@@ -36,8 +36,6 @@ public class AppRepository {
     database = AppLockerDatabase.getInstance();
   }
 
-  //TODO Use DoAttempt instead of just logging the attempts that way if it was correct its
-
   public void logAttempt(App app, Timestamp timestamp, String password) {
     Attempt attempt = new Attempt();
     attempt.setSuccess(true);

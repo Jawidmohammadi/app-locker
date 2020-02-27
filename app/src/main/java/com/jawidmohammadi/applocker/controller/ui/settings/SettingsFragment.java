@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,23 +14,28 @@ import androidx.lifecycle.ViewModelProviders;
 import com.jawidmohammadi.applocker.R;
 import com.jawidmohammadi.applocker.controller.ui.privacy.PrivacyViewModel;
 
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends Fragment implements View.OnClickListener {
 
   private PrivacyViewModel settingsViewModel;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
-    settingsViewModel =
-        ViewModelProviders.of(this).get(PrivacyViewModel.class);
-    View root = inflater.inflate(R.layout.fragment_privacy, container, false);
-    final TextView textView = root.findViewById(R.id.text_notifications);
-    settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-      @Override
-      public void onChanged(@Nullable String s) {
-        textView.setText(s);
-      }
-    });
-    return root;
+//    settingsViewModel =
+//        ViewModelProviders.of(this).get(PrivacyViewModel.class);
+    View view = inflater.inflate(R.layout.fragment_settings, container, false);
+    view.findViewById(R.id.create_pin).setOnClickListener(this);
+    view.findViewById(R.id.create_password).setOnClickListener(this);
+    view.findViewById(R.id.create_pattern).setOnClickListener(this);
+//    settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//      @Override
+//      public void onChanged(@Nullable String s) {
+//        textView.setText(s);
+//      }
+    return view;
   }
 
+  @Override
+  public void onClick(View v) {
+    System.out.println("Button"); // TODO Create Functionality for each Button press.
+  }
 }

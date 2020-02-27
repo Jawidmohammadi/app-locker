@@ -37,10 +37,11 @@ public interface AppDao {
 
   @Query("SELECT * FROM App WHERE package = :pkg")
   Maybe<App> select(String pkg);
-  //TODO Use AppDao to search for an existing record for this package update if exist otherwise create a new record.
 
-//  @Update("SELECT * FROM App WHERE pkg = :pkg  ")
-//  Completable<> update (App app);
+  //TODO Use AppDao to search for an existing record for this package update if exist otherwise create a new record.
+//  @Query("SELECT * FROM App WHERE package = :pkg")
+//  Completable update(String pkg);
+
 
 
 
