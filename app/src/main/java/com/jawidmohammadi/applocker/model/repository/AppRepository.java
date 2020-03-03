@@ -35,6 +35,7 @@ public class AppRepository {
     rng = new SecureRandom();
     database = AppLockerDatabase.getInstance();
   }
+// change to a login function instead of a login attempt.
 
   public void logAttempt(App app, Timestamp timestamp, String password) {
     Attempt attempt = new Attempt();

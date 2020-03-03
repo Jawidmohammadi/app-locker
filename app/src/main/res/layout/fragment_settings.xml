@@ -5,16 +5,16 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
+
   <Button
     android:id="@+id/create_pin"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
     android:background="#FFFFFF"
     android:text="@string/create_your_pin"
     android:textSize="24sp"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/create_password"
     app:layout_constraintTop_toTopOf="parent"/>
 
 
@@ -22,11 +22,12 @@
     android:id="@+id/create_password"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+
     android:background="#FFFFFF"
     android:text="@string/create_your_password"
     android:textSize="24sp"
     app:layout_constraintBottom_toTopOf="@id/create_pattern"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/create_pin"/>
 
@@ -34,11 +35,10 @@
     android:id="@+id/create_pattern"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
     android:background="#FFFFFF"
     android:text="@string/create_your_pattern"
     android:textSize="24sp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/create_password"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

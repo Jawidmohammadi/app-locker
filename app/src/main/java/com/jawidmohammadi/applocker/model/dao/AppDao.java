@@ -39,8 +39,9 @@ public interface AppDao {
   Maybe<App> select(String pkg);
 
   //TODO Use AppDao to search for an existing record for this package update if exist otherwise create a new record.
-//  @Query("SELECT * FROM App WHERE package = :pkg")
-//  Completable update(String pkg);
+  @Insert(onConflict = OnConflictStrategy.REPLACE)
+  Completable insertOrUpdate(App app);
+
 
 
 
