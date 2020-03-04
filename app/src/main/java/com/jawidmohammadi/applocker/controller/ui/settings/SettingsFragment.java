@@ -17,6 +17,9 @@ import com.jawidmohammadi.applocker.controller.ui.privacy.PrivacyViewModel;
 public class SettingsFragment extends Fragment implements View.OnClickListener {
 
   private PrivacyViewModel settingsViewModel;
+  private Button createPin;
+  private Button createPattern;
+  private Button createPassword;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +39,15 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
 
   @Override
   public void onClick(View v) {
+    switch (v.getId()){
+      case R.id.create_pin:
+        break;
+      case R.id.create_password:
+        break;
+      case R.id.create_pattern:
+        break;
+      default:
+    }
     System.out.println("Button"); // TODO Create Functionality for each Button press.
   }
 }

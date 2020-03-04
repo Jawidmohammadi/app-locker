@@ -9,7 +9,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 import com.jawidmohammadi.applocker.R;
 
 
@@ -17,18 +19,20 @@ public class AppsFragment extends Fragment {
 
   private AppsViewModel appsViewModel;
 
+  private RecyclerView appList;
+
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
-    appsViewModel =
-        ViewModelProviders.of(this).get(AppsViewModel.class);
     View root = inflater.inflate(R.layout.fragment_apps, container, false);
-    final TextView textView = root.findViewById(R.id.text_home);
-    appsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-      @Override
-      public void onChanged(@Nullable String s) {
-        textView.setText(s);
-      }
-    });
+    appList = root.findViewById(R.id.app_list);
+
     return root;
+  }
+
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+    appsViewModel = new ViewModelProvider(this).get(AppsViewModel.class);
+    //TODO Observe viewmodel data.
   }
 }

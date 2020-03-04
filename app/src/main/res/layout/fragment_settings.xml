@@ -15,7 +15,9 @@
     android:text="@string/create_your_pin"
     android:textSize="24sp"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
+    app:layout_constraintBottom_toTopOf="@id/create_password"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="packed"/>
 
 
   <Button
@@ -40,5 +42,6 @@
     android:text="@string/create_your_pattern"
     android:textSize="24sp"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/create_password"/>
+    app:layout_constraintTop_toBottomOf="@id/create_password"
+    app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

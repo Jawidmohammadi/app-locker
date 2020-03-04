@@ -28,6 +28,7 @@ public class App {
 
   private String salt;
 
+
   public String getSalt() {
     return salt;
   }
@@ -64,7 +65,12 @@ public class App {
     return restrictionMethod;
   }
 
+
+
   public void setRestrictionMethod(String restrictionMethod) {
     this.restrictionMethod = restrictionMethod;
+  }
+  public boolean isLocked(){
+    return id != 0;
   }
 }
