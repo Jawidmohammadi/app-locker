@@ -30,10 +30,10 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     view.findViewById(R.id.create_password).setOnClickListener(this);
     view.findViewById(R.id.create_pattern).setOnClickListener(this);
 //    settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//      @Override
-//      public void onChanged(@Nullable String s) {
-//        textView.setText(s);
-//      }
+////      @Override
+////      public void onChanged(@Nullable String s) {
+////        textView.setText(s);
+////      }
     return view;
   }
 

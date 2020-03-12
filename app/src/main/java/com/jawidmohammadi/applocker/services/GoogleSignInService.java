@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.quoteclient.service;
+package com.jawidmohammadi.applocker.services;
 
 import android.app.Activity;
 import android.app.Application;
@@ -11,12 +11,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
-import edu.cnm.deepdive.quoteclient.BuildConfig;
+import com.jawidmohammadi.applocker.BuildConfig;
 
 public class GoogleSignInService {
 
   private static Application context;
-
   private GoogleSignInClient client;
   private MutableLiveData<GoogleSignInAccount> account;
   private MutableLiveData<Throwable> throwable;

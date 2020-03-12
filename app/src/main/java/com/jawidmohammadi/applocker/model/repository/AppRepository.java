@@ -29,7 +29,6 @@ public class AppRepository {
   private Random rng;
   private static Application context;
 
-  //TODO Add useful functions for data.
 
 
   private AppRepository() {

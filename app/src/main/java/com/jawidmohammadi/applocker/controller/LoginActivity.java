@@ -1,23 +1,23 @@
-package edu.cnm.deepdive.nasaapod.controller;
+package com.jawidmohammadi.applocker.controller;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import edu.cnm.deepdive.nasaapod.R;
-import edu.cnm.deepdive.nasaapod.service.GoogleSignInRepository;
+import com.jawidmohammadi.applocker.R;
+import com.jawidmohammadi.applocker.services.GoogleSignInService;
 
 public class LoginActivity extends AppCompatActivity {
 
   private static final int LOGIN_REQUEST_CODE = 1000;
 
-  private GoogleSignInRepository repository;
+  private GoogleSignInService repository;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    repository = GoogleSignInRepository.getInstance();
+    repository = GoogleSignInService.getInstance();
     repository.refresh()
         .addOnSuccessListener((account) -> switchToMain())
         .addOnFailureListener((ex) -> {

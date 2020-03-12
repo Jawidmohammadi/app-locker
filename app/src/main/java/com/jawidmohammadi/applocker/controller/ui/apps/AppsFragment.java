@@ -24,7 +24,7 @@ public class AppsFragment extends Fragment {
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
     View root = inflater.inflate(R.layout.fragment_apps, container, false);
-    appList = root.findViewById(R.id.app_list);
+    appList = root.findViewById(R.id.icon_list);
 
     return root;
   }

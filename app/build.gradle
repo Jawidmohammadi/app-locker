@@ -9,7 +9,9 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "GOOGLE_CLIENT_ID", "\"1040715150168-lthh46cqfebrqeekvf8nqta2hc862og9.apps.googleusercontent.com\""
         //pasted from slack this 3 lines
         javaCompileOptions {
             annotationProcessorOptions {
@@ -58,6 +60,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version" // lets room use reactiveX
     implementation 'androidx.navigation:navigation-fragment:2.2.0'
     implementation 'androidx.navigation:navigation-ui:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor "androidx.room:room-compiler:$room_version"
     // uses room based on our annotation
     implementation "androidx.room:room-rxjava2:$room_version"   // uses room at run time
@@ -75,6 +78,9 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    // Google Sign-In dependencies.
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

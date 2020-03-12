@@ -10,11 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 import com.jawidmohammadi.applocker.R;
 
 
 public class LockedFragment extends Fragment {
 
+  private RecyclerView lockedList;
   private LockedViewModel lockedViewModel;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
@@ -22,13 +24,12 @@ public class LockedFragment extends Fragment {
     lockedViewModel =
         ViewModelProviders.of(this).get(LockedViewModel.class);
     View root = inflater.inflate(R.layout.fragment_locked, container, false);
-    final TextView textView = root.findViewById(R.id.text_dashboard);
-    lockedViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-      @Override
-      public void onChanged(@Nullable String s) {
-        textView.setText(s);
-      }
-    });
+
     return root;
+  }
+
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
   }
 }

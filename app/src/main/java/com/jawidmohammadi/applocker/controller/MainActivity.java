@@ -1,15 +1,27 @@
 package com.jawidmohammadi.applocker.controller;
 
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.util.Log;
+import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.jawidmohammadi.applocker.ImageAdapter;
 import com.jawidmohammadi.applocker.R;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +36,33 @@ public class MainActivity extends AppCompatActivity {
     NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     NavigationUI.setupWithNavController(navView, navController);
+
+    // to show system installed app.
+    ListView iconList = findViewById(R.id.icon_list);
+    List<ApplicationInfo> packages = getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA);
+    ImageAdapter adapter = new ImageAdapter(this, R.layout.icon_item, packages);
+    iconList.setAdapter(adapter);
+  }
+  private List<ApplicationInfo> getApplications() {
+    PackageManager manager = getPackageManager();
+    Intent intent = new Intent(Intent.ACTION_MAIN);
+    intent.addCategory(Intent.CATEGORY_LAUNCHER);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+    List<ResolveInfo> intents = getPackageManager().queryIntentActivities(intent, 0);
+    List<ApplicationInfo> apps = new ArrayList<>();
+    for (ResolveInfo info : intents) {
+      try {
+        apps.add(manager.getApplicationInfo(info.activityInfo.packageName, 0));
+      } catch (NameNotFoundException e) {
+        Log.e(getClass().getName(), "Can't add app to list", e);
+      }
+    }
+    // HACK This is a terrible way to sort! You should instead create instances of your model class
+    //  (which should implement Comparable), and then sort list of those instances.
+    Collections.sort(apps, (app1, app2) ->
+        manager.getApplicationLabel(app1).toString().compareTo(
+            manager.getApplicationLabel(app2).toString()));
+    return apps;
   }
 
 }

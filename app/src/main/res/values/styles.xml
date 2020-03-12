@@ -8,4 +8,10 @@
     <item name="colorAccent">@color/colorAccent</item>
   </style>
 
+  <style name="LockedList">
+    <item name="android:orientation">vertical</item>
+    <item name="android:background">@color/background</item>
+  </style>
+
+
 </resources>
