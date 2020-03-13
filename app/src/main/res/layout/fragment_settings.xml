@@ -6,13 +6,6 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-<androidx.recyclerview.widget.RecyclerView
-  android:id="@+id/buttons"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@color/background">
-
-
   <Button
     android:id="@+id/create_pin"
     android:layout_width="wrap_content"
@@ -51,5 +44,4 @@
     app:layout_constraintTop_toBottomOf="@id/create_password"
     app:layout_constraintBottom_toBottomOf="parent"/>
 
-</androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

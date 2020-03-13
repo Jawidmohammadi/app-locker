@@ -15,10 +15,7 @@ public class AppLockerApplication  extends Application {
   public void onCreate() {
     super.onCreate();
     Stetho.initializeWithDefaults(this);
-    AppRepository.setContext(this);
     GoogleSignInService.setContext(this);
-    AppLockerDatabase.setContext(this);
-    AppRepository.setContext(this);
     AppLockerDatabase.setContext(this);
     AppLockerDatabase.getInstance().getApplicationDao().delete()
         .subscribeOn(Schedulers.io())

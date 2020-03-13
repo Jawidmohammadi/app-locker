@@ -3,6 +3,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="com.jawidmohammadi.applocker">
 
+
+
   <application
     android:name=".AppLockerApplication"
 
@@ -22,6 +24,10 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
 
+
+
     </activity>
+
+
   </application>
 </manifest>

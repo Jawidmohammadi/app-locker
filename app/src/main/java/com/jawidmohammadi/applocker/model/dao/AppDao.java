@@ -9,6 +9,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 import com.jawidmohammadi.applocker.model.entity.App;
 import io.reactivex.Completable;
+import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
 import java.util.Collection;
@@ -30,7 +31,7 @@ public interface AppDao {
   Single<Integer> delete(App... app);
 
   @Query("SELECT * FROM App ORDER BY application_id")
-  LiveData<List<App>> select();
+  Flowable<List<App>> select();
 
   @Query("SELECT * FROM App WHERE application_id = :appId")
   Single<App> select (long appId);
