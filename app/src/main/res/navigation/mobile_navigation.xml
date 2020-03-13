@@ -5,6 +5,8 @@
   android:id="@+id/mobile_navigation"
   app:startDestination="@id/navigation_apps">
 
+
+
   <fragment
     android:id="@+id/navigation_apps"
     android:label="@string/title_apps"
