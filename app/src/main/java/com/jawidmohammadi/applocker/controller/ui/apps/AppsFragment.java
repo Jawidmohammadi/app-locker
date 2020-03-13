@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import com.jawidmohammadi.applocker.R;
-import com.jawidmohammadi.applocker.view.AppRecyclerAdapter;
 
 
 public class AppsFragment extends Fragment {
@@ -22,19 +21,21 @@ public class AppsFragment extends Fragment {
 
   private RecyclerView appList;
 
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+  }
+
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
-//    View root = inflater.inflate(R.layout.fragment_apps, container, false);
-//    appList = root.findViewById(R.id.icon_list);
-//    return root;
-    RecyclerView iconList = findViewById(R.id.icon_list);
-    AppsViewModel viewModel = new ViewModelProvider(this).get(AppsViewModel.class);
-    viewModel.getApps().observe(this, (apps) -> {
-      AppRecyclerAdapter adapter = new AppRecyclerAdapter(this, apps);
-      iconList.setAdapter(adapter);
-    });
-    viewModel.refreshApps();
-    return iconList;
+    View root = inflater.inflate(R.layout.fragment_apps, container, false);
+    appList = root.findViewById(R.id.icon_list);
+    return root;
+
+
+
+
   }
 
   @Override

@@ -14,4 +14,17 @@
   </style>
 
 
+
+  <style name="textbold" parent="@android:style/TextAppearance">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="textregular" parent="@android:style/TextAppearance">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textStyle">normal</item>
+  </style>
+
 </resources>

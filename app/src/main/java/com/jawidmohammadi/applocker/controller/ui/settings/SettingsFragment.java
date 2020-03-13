@@ -20,6 +20,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
   private Button createPin;
   private Button createPattern;
   private Button createPassword;
+  private Button fingerPrint;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
@@ -29,11 +30,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     view.findViewById(R.id.create_pin).setOnClickListener(this);
     view.findViewById(R.id.create_password).setOnClickListener(this);
     view.findViewById(R.id.create_pattern).setOnClickListener(this);
-//    settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-////      @Override
-////      public void onChanged(@Nullable String s) {
-////        textView.setText(s);
-////      }
+    view.findViewById(R.id.finger_print).setOnClickListener(this);
     return view;
   }
 
@@ -45,6 +42,8 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
       case R.id.create_password:
         break;
       case R.id.create_pattern:
+        break;
+      case R.id.finger_print:
         break;
       default:
     }

@@ -3,45 +3,85 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
+  android:background="@color/background"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
+
   <Button
     android:id="@+id/create_pin"
+    style=""
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="32dp"
-    android:background="#FFFFFF"
+    android:padding="10dp"
+    android:background="@null"
+    android:drawableBottom="@null"
+    android:shadowRadius="@null"
     android:text="@string/create_your_pin"
+    android:textColor="@color/colorPrimary"
     android:textSize="24sp"
-    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toTopOf="@id/create_password"
+    app:layout_constraintStart_toStartOf="@id/guideline"
     app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.36"
     app:layout_constraintVertical_chainStyle="packed"/>
 
 
   <Button
     android:id="@+id/create_password"
+    style=""
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:background="#FFFFFF"
+    android:padding="10dp"
+    android:background="@null"
+    android:drawableBottom="@null"
+    android:shadowRadius="@null"
     android:text="@string/create_your_password"
+    android:textColor="@color/colorPrimary"
     android:textSize="24sp"
+
     app:layout_constraintBottom_toTopOf="@id/create_pattern"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintStart_toStartOf="@id/guideline"
     app:layout_constraintTop_toBottomOf="@id/create_pin"/>
 
   <Button
     android:id="@+id/create_pattern"
+    style=""
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:background="#FFFFFF"
+    android:padding="10dp"
+    android:background="@null"
+    android:drawableBottom="@null"
+    android:shadowRadius="@null"
     android:text="@string/create_your_pattern"
-    android:textSize="24sp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/create_password"
-    app:layout_constraintBottom_toBottomOf="parent"/>
+    android:textColor="@color/colorPrimary"
 
+    android:textSize="24sp"
+    app:layout_constraintBottom_toTopOf="@id/finger_print"
+    app:layout_constraintStart_toStartOf="@id/guideline"
+    app:layout_constraintTop_toBottomOf="@id/create_password"/>
+
+  <Button
+    android:id="@+id/finger_print"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    style=""
+    android:shadowRadius="@null"
+    android:drawableBottom="@null"
+    android:text="@string/finger_print"
+    android:padding="10dp"
+    android:textSize="24sp"
+    android:textColor="@color/colorPrimary"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="@id/guideline"
+    app:layout_constraintTop_toBottomOf="@id/create_pattern"/>
+
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.10218978"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
