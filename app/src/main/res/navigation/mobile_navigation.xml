@@ -24,7 +24,11 @@
     android:id="@+id/navigation_locked"
     android:label="@string/title_locked"
     android:name="com.jawidmohammadi.applocker.controller.ui.locked.LockedFragment"
-    tools:layout="@layout/fragment_locked"/>
+    tools:layout="@layout/fragment_locked">
+    <action
+      android:id="@+id/action_navigation_locked_to_navigation_apps"
+      app:destination="@id/navigation_apps"/>
+  </fragment>
 
   <fragment
     android:id="@+id/navigation_privacy"

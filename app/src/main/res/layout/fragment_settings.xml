@@ -19,8 +19,9 @@
       android:drawableBottom="@null"
       android:shadowRadius="@null"
       android:text="@string/create_your_pin"
-      android:textColor="@color/colorPrimary"
+      android:textColor="@drawable/button_states"
       android:textSize="24sp"
+
       app:layout_constraintBottom_toTopOf="@id/create_password"
       app:layout_constraintStart_toStartOf="@id/guideline"
       app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +39,7 @@
       android:drawableBottom="@null"
       android:shadowRadius="@null"
       android:text="@string/create_your_password"
-      android:textColor="@color/colorPrimary"
+      android:textColor="@drawable/button_states"
       android:textSize="24sp"
 
       app:layout_constraintBottom_toTopOf="@id/create_pattern"
@@ -55,7 +56,7 @@
       android:drawableBottom="@null"
       android:shadowRadius="@null"
       android:text="@string/create_your_pattern"
-      android:textColor="@color/colorPrimary"
+      android:textColor="@drawable/button_states"
 
       android:textSize="24sp"
       app:layout_constraintBottom_toTopOf="@id/finger_print"
@@ -73,7 +74,7 @@
       android:text="@string/finger_print"
       android:padding="10dp"
       android:textSize="24sp"
-      android:textColor="@color/colorPrimary"
+      android:textColor="@drawable/button_states"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="@id/guideline"
       app:layout_constraintTop_toBottomOf="@id/create_pattern"/>

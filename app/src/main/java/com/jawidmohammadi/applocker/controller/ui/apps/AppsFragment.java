@@ -24,18 +24,14 @@ public class AppsFragment extends Fragment {
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
   }
 
+  @Override
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
     View root = inflater.inflate(R.layout.fragment_apps, container, false);
     appList = root.findViewById(R.id.icon_list);
     return root;
-
-
-
-
   }
 
   @Override

@@ -3,12 +3,16 @@
   <item
     android:state_focused="true"
     android:state_pressed="true"
-    style="@style/textbold" />
+    android:color = "#FD855C" />
 
   <item
     android:state_focused="false"
-    android:state_pressed="true"
-    style="@style/textregular" />
+    android:state_pressed="false"
+    android:color = "#e8491d" />
 
-  <item style="@style/textregular" />
+  <item
+    android:state_focused="true"
+    android:state_pressed="false"
+    android:color = "#FD855C" />
+
 </selector>
