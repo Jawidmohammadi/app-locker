@@ -31,7 +31,7 @@ public interface AppDao {
   Single<Integer> delete(App... app);
 
   @Query("SELECT * FROM App ORDER BY application_id")
-  Flowable<List<App>> select();
+  Single<List<App>> select();
 
   @Query("SELECT * FROM App WHERE application_id = :appId")
   Single<App> select (long appId);

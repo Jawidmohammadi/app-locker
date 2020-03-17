@@ -14,13 +14,14 @@ import com.jawidmohammadi.applocker.model.repository.AppRepository;
 import io.reactivex.disposables.CompositeDisposable;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 // added this to view list of apps in recycler view
 
 public class AppsViewModel extends AndroidViewModel implements LifecycleObserver {
 
   private final AppRepository repository;
-  private final MutableLiveData<List<App>> apps;
+  private final MutableLiveData<Set<App>> apps;
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
 
@@ -32,16 +33,17 @@ public class AppsViewModel extends AndroidViewModel implements LifecycleObserver
     pending = new CompositeDisposable();
   }
 
-  public LiveData<List<App>> getApps() {
+  public LiveData<Set<App>> getApps() {
     return apps;
   }
 
   public void refreshApps() {
-    List<App> apps = new LinkedList<>();
     pending.add(
         repository.getAll()
-            .doFinally(() -> this.apps.postValue(apps))
-            .forEach(apps::add)
+            .subscribe(
+                apps::postValue,
+                throwable::postValue
+            )
     );
   }
 

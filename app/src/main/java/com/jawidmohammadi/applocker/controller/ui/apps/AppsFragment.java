@@ -1,6 +1,7 @@
 package com.jawidmohammadi.applocker.controller.ui.apps;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import com.jawidmohammadi.applocker.R;
+import com.jawidmohammadi.applocker.view.AppRecyclerAdapter;
+import java.util.ArrayList;
 
 
 public class AppsFragment extends Fragment {
@@ -38,8 +41,11 @@ public class AppsFragment extends Fragment {
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     appsViewModel = new ViewModelProvider(this).get(AppsViewModel.class);
-    //TODO Observe viewmodel data.
-
+    appsViewModel.getApps().observe(getViewLifecycleOwner(), (apps) -> {
+      AppRecyclerAdapter adapter = new AppRecyclerAdapter(getContext(), new ArrayList<>(apps));
+      appList.setAdapter(adapter);
+    });
+    appsViewModel.refreshApps();
 
 
   }

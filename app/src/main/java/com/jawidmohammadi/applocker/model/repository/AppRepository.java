@@ -48,22 +48,20 @@ public class AppRepository {
   }
   // TODO implement in app view model to invoke this methode in the repository to lock it.
 
-  public Flowable<App> getAll() {
-    PackageManager manager = context.getPackageManager();
-    Set<App> appSet = new TreeSet<>();
-    database.getApplicationDao().select()
+  public Single<Set<App>> getAll() {
+    return database.getApplicationDao().select()
         .subscribeOn(Schedulers.io())
-        .subscribe(
-            (apps) -> {
-              for (App app : apps) {
-                app.setLabel(manager.getApplicationLabel(
-                    manager.getApplicationInfo(app.getPkg(), 0)).toString());
-              }
-              appSet.addAll(apps);
-              appSet.addAll(buildAppPackageList());
-            }
-        );
-    return Flowable.fromIterable(appSet);
+        .map((apps)->{
+          PackageManager manager = context.getPackageManager();
+          Set<App> appSet = new TreeSet<>();
+          for (App app : apps) {
+            app.setLabel(manager.getApplicationLabel(
+                manager.getApplicationInfo(app.getPkg(), 0)).toString());
+          }
+          appSet.addAll(apps);
+          appSet.addAll(buildAppPackageList());
+          return appSet;
+        });
   }
 
   public Completable lock(String pkg, String password) throws NoSuchAlgorithmException {
