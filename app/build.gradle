@@ -53,15 +53,15 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
 
     // ReactiveX-related dependencies.
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     // Use of ROom ORM Object Relational Mapping Library Sql lite dependencies will be automatically added cause room itself is dependent on Sql lite dependencies.
     //Room and SQL Lite
     def room_version = "2.2.3"
     implementation "androidx.room:room-runtime:$room_version" // lets room use reactiveX
-    implementation 'androidx.navigation:navigation-fragment:2.2.0'
-    implementation 'androidx.navigation:navigation-ui:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor "androidx.room:room-compiler:$room_version"
     // uses room based on our annotation

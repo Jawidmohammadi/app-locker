@@ -8,9 +8,8 @@
   <string name="create_your_pin">Create your Pin</string>
   <string name="create_your_password">Create your password</string>
   <string name="create_your_pattern">Create your pattern</string>
-
+  <string name="content_description_placeholder">Placeholder</string>
   <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="login_failure">LoginFailure</string>
   <string name="finger_print">Finger Print</string>
   <string name="input_pin_to_unlock">INPUT PIN TO UNLOCK</string>
