@@ -12,6 +12,6 @@
   <!-- TODO: Remove or change this placeholder text -->
   <string name="login_failure">LoginFailure</string>
   <string name="finger_print">Finger Print</string>
-  <string name="input_pin_to_unlock">INPUT PIN TO UNLOCK</string>
+  <string name="input_pin_to_unlock">ENTER PIN TO UNLOCK</string>
   <string name="action_message">Enter an initial pin</string>
 </resources>

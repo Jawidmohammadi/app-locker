@@ -110,7 +110,6 @@ public class AppRepository {
         Log.e(getClass().getName(), "Can't add app to list", e);
       }
     }
-//    Collections.sort(apps);
     return apps;
   }
 

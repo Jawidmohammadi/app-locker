@@ -1,5 +1,6 @@
 package com.jawidmohammadi.applocker.controller.ui.apps;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.jawidmohammadi.applocker.R;
 import com.jawidmohammadi.applocker.view.AppRecyclerAdapter;
@@ -24,6 +26,7 @@ public class AppsFragment extends Fragment {
 
   private RecyclerView appList;
 
+
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -34,6 +37,12 @@ public class AppsFragment extends Fragment {
       ViewGroup container, Bundle savedInstanceState) {
     View root = inflater.inflate(R.layout.fragment_apps, container, false);
     appList = root.findViewById(R.id.icon_list);
+    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+      appList.setLayoutManager(new GridLayoutManager(getContext(), 2));
+    } else{
+      appList.setLayoutManager(new GridLayoutManager(getContext(), 3));
+    }
+
     return root;
   }
 
