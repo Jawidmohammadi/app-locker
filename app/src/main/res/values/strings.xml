@@ -14,4 +14,11 @@
   <string name="finger_print">Finger Print</string>
   <string name="input_pin_to_unlock">ENTER PIN TO UNLOCK</string>
   <string name="action_message">Enter an initial pin</string>
+  <string name="pattern_vibration">Pattern Vibration</string>
+  <string name="security_email">Security Email</string>
+  <string name="hide_pattern_trails">Hide Pattern Trails</string>
+  <string name="lock_frequency">Lock Frequency</string>
+  <string name="unlocked">UnLocked</string>
+  <string name="locked">Locked</string>
+  <string name="lock">Lock</string>
 </resources>

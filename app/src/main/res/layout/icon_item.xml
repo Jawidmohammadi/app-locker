@@ -5,7 +5,8 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content">
+  android:layout_height="wrap_content"
+  android:layout_margin="10dp">
   <ImageView
     android:id="@+id/icon"
     android:layout_width="50dp"
@@ -40,13 +41,16 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_weight="2"
-    android:text="Lock "
     android:textStyle="bold"
     android:textColor="@color/colorPrimary"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="@id/icon"
-    android:layout_marginStart="80dp"
-    app:layout_constraintTop_toTopOf="parent"/>
+    android:layout_marginStart="70dp"
+    app:layout_constraintTop_toTopOf="parent"
+    android:checked="true"
+    android:textOff="@string/unlocked"
+    android:textOn="@string/locked"
+    />
 
   <androidx.constraintlayout.widget.Guideline
     android:id="@+id/guideline"

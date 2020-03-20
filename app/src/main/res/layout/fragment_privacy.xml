@@ -7,27 +7,68 @@
   android:layout_height="match_parent"
   android:background="@color/background">
   <Button
-    android:id="@+id/button"
+    android:id="@+id/lock_frequency"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Lock Frequency"/>
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:background="@null"
+    android:drawableBottom="@null"
+    android:shadowRadius="@null"
+    android:text="@string/lock_frequency"
+    android:textColor="@drawable/button_states"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toTopOf="@id/hide_pattern_trail"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.16000003"
+    app:layout_constraintVertical_chainStyle="packed"
+    />
 
   <CheckBox
     android:id="@+id/hide_pattern_trail"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hide Pattern Trails"
-    />
+    android:text="@string/hide_pattern_trails"
+    app:layout_constraintTop_toBottomOf="@id/lock_frequency"
+    app:layout_constraintBottom_toTopOf="@id/pattern_vibration"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.1"
+    android:layout_margin="10dp"
+    android:textColor="@color/colorPrimary"
+    android:textSize="20sp"
+    android:onClick="onCheckboxClicked"/>
   <CheckBox
-    android:id="@+id/checkBox2"
+    android:id="@+id/pattern_vibration"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="CheckBox"/>
+    android:text="@string/pattern_vibration"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/hide_pattern_trail"
+    app:layout_constraintBottom_toTopOf="@id/security_email"
+    android:layout_margin="10dp"
+    android:onClick="onCheckboxClicked"
+    android:textColor="@color/colorPrimary"
+    android:textSize="20sp"
+    app:layout_constraintHorizontal_bias="0.1"/>
   <CheckBox
-    android:id="@+id/checkBox3"
+    android:id="@+id/security_email"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="CheckBox"/>
+    android:text="@string/security_email"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/pattern_vibration"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_margin="10dp"
+    android:onClick="onCheckboxClicked"
+    android:textColor="@color/colorPrimary"
+    android:textSize="20sp"
+    app:layout_constraintHorizontal_bias="0.1"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
