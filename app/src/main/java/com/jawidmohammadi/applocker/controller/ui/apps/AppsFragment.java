@@ -35,9 +35,9 @@ public class AppsFragment extends Fragment {
       ViewGroup container, Bundle savedInstanceState) {
     View root = inflater.inflate(R.layout.fragment_apps, container, false);
     appList = root.findViewById(R.id.icon_list);
-    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
       appList.setLayoutManager(new GridLayoutManager(getContext(), 2));
-    } else{
+    } else {
       appList.setLayoutManager(new GridLayoutManager(getContext(), 3));
     }
 
@@ -49,12 +49,20 @@ public class AppsFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
     appsViewModel = new ViewModelProvider(this).get(AppsViewModel.class);
     appsViewModel.getApps().observe(getViewLifecycleOwner(), (apps) -> {
-      AppRecyclerAdapter adapter = new AppRecyclerAdapter(getContext(), new ArrayList<>(apps));
+      AppRecyclerAdapter adapter = new AppRecyclerAdapter(getContext(), new ArrayList<>(apps),
+          (app, locked) -> {
+            if (locked) {
+              //TODO show dialog to get locking password. in the dialog the ok button should result in locking the app
+
+              //the dialog should invoke appsViewModel.lock(app, password);
+            } else {
+              appsViewModel.unlock(app);
+            }
+          });
       appList.setAdapter(adapter);
     });
     appsViewModel.refreshApps();
   }
-
 
 
 }

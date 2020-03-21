@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/input_password"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:hint="@string/create_your_password"
+    android:inputType="textPassword"
+    />
+  <Button
+    android:id="@+id/ok_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:layout_toRightOf="@id/input_password"
+    android:text="OK"/>
+  <Button
+    android:id="@+id/cancel_action"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="112dp"
+    android:layout_toEndOf="@id/input_password"
+    android:text="Cancel"/>
+
+
+</RelativeLayout>

@@ -23,6 +23,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.zip.CheckedOutputStream;
+import javax.security.auth.login.LoginException;
 
 public class AppRepository {
 
@@ -51,7 +53,7 @@ public class AppRepository {
   public Single<Set<App>> getAll() {
     return database.getApplicationDao().select()
         .subscribeOn(Schedulers.io())
-        .map((apps)->{
+        .map((apps) -> {
           PackageManager manager = context.getPackageManager();
           Set<App> appSet = new TreeSet<>();
           for (App app : apps) {
@@ -64,7 +66,7 @@ public class AppRepository {
         });
   }
 
-  public Completable lock(String pkg, String password) throws NoSuchAlgorithmException {
+  public Completable lock(String pkg, String password)  {
     return Completable.fromSingle(
         database.getApplicationDao().select(pkg)
             .subscribeOn(Schedulers.io())
@@ -89,7 +91,34 @@ public class AppRepository {
                   .subscribe();
               return app;
             }))
+            .subscribeOn(Schedulers.io())
     );
+  }
+
+  public Completable unlock(App app, String password) {
+    return Completable.fromAction(() -> {
+      MessageDigest digest = MessageDigest.getInstance("SHA-256");
+      digest.update(password.getBytes());
+      byte[] saltBytes = Base64.decode(app.getSalt(), Base64.NO_PADDING | Base64.NO_WRAP);
+      digest.update(saltBytes);
+      String hashedPassword = Base64
+          .encodeToString(digest.digest(), Base64.NO_PADDING | Base64.NO_WRAP);
+      if (!hashedPassword.equals(app.getHashedPassword())) {
+        throw new LoginException();
+      }
+    })
+        .subscribeOn(Schedulers.computation());
+  }
+
+  public Completable remove(App app){
+    if (app.getId() != 0) {
+      return Completable.fromSingle(
+          database.getApplicationDao().delete(app)
+              .subscribeOn(Schedulers.io())
+      );
+    } else {
+      return Completable.fromAction(() -> {});
+    }
   }
 
   private List<App> buildAppPackageList() {

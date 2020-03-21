@@ -6,6 +6,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
+//import com.jawidmohammadi.applocker.BackgroundServices;
 import com.jawidmohammadi.applocker.model.dao.AppDao;
 import com.jawidmohammadi.applocker.model.dao.AttemptDao;
 import com.jawidmohammadi.applocker.model.entity.App;
@@ -23,6 +24,11 @@ public abstract class AppLockerDatabase extends RoomDatabase {
 
   private static final String DB_NAME = "applocker_database";
   private static Application context;
+
+  // background services constructor
+//  public AppLockerDatabase(BackgroundServices backgroundServices) {
+
+//  }
 
   public static void setContext(Application context){
     AppLockerDatabase.context = context;

@@ -12,6 +12,7 @@ import androidx.lifecycle.OnLifecycleEvent;
 import com.jawidmohammadi.applocker.model.entity.App;
 import com.jawidmohammadi.applocker.model.repository.AppRepository;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Action;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -42,6 +43,36 @@ public class AppsViewModel extends AndroidViewModel implements LifecycleObserver
         repository.getAll()
             .subscribe(
                 apps::postValue,
+                throwable::postValue
+            )
+    );
+  }
+
+  public void lock(App app, String password) {
+    pending.add(
+        repository.lock(app.getPkg(), password)
+            .subscribe(
+                this::refreshApps,
+                throwable::postValue
+            )
+    );
+  }
+
+  public void unlock(App app) {
+    pending.add(
+        repository.remove(app)
+            .subscribe(
+                this::refreshApps,
+                throwable::postValue
+            )
+    );
+  }
+
+  public void unlockOnce(App app, String password, Action action) {
+    pending.add(
+        repository.unlock(app, password)
+            .subscribe(
+                action::run,
                 throwable::postValue
             )
     );
