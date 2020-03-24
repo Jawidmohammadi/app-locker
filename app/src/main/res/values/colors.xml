@@ -5,5 +5,6 @@
   <color name="colorAccent">#e8491d</color>
   <color name="lockedListBackground">#35424a</color>
   <color name="background">#454B55</color>
+  <color name="white">#FFF</color>
 
 </resources>

@@ -1,10 +1,13 @@
 package com.jawidmohammadi.applocker.controller.ui.apps;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -26,6 +29,7 @@ public class AppsFragment extends Fragment {
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
 
 
   }
@@ -53,7 +57,6 @@ public class AppsFragment extends Fragment {
           (app, locked) -> {
             if (locked) {
               //TODO show dialog to get locking password. in the dialog the ok button should result in locking the app
-
               //the dialog should invoke appsViewModel.lock(app, password);
             } else {
               appsViewModel.unlock(app);

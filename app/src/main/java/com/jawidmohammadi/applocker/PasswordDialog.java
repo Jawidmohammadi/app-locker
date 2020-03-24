@@ -7,6 +7,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Switch;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -16,6 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Objects;
 
 public class PasswordDialog extends AppCompatDialogFragment {
+
 private TextInputEditText editTextPassword;
 private PasswordDialogListener listener;
 
@@ -25,12 +27,13 @@ private PasswordDialogListener listener;
   public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
     AlertDialog.Builder builder = new Builder(Objects.requireNonNull(getActivity()));
     LayoutInflater inflater = getActivity().getLayoutInflater();
-    View view = inflater.inflate(R.layout.layout_dialog, null, false);
+    View view = inflater.inflate(R.layout.password_dialog, null, false);
     builder.setView(view)
         .setTitle("Set Password")
         .setNegativeButton("Cancel", new OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {
+
 
           }
         })

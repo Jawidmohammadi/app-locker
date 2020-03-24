@@ -1,0 +1,9 @@
+-bootclasspath "C:\Program Files\Java\jdk1.8.0_242\jre\lib\rt.jar";C:\android\sdk\platforms\android-21\android.jar
+-link https://docs.oracle.com/javase/8/docs/api/
+-link https://square.github.io/retrofit/2.x/retrofit/
+-link https://javadoc.io/doc/com.google.code.gson/gson/latest/com.google.gson/
+-link https://javadoc.io/doc/com.squareup.okhttp3/okhttp/3.14.7/okhttp3/
+-link https://square.github.io/picasso/2.x/picasso/
+-link http://reactivex.io/RxJava/javadoc/
+-linkoffline https://developer.android.com/reference/ C:\android\sdk\docs\reference
+-windowtitle "App Locker"

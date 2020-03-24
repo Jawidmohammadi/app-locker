@@ -76,7 +76,6 @@ public class AppRecyclerAdapter extends RecyclerView.Adapter<Holder> {
 
   }
 
-
   public interface OnLockChangedListener {
     void changeState(App app, boolean locked);
   }
