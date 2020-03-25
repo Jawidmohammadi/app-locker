@@ -27,3 +27,4 @@ This service allows the app to run in the background, so that way the app locker
 ## [User Stories](./user-stories.md)
 ## [Wire Frame](wireframe.md)
 ## [Entity Relationship Diagram](erd.md)
+## [Copyright and license information](notice.md)
