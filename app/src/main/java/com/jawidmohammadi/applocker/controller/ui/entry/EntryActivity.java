@@ -19,6 +19,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Random;
 
+
 public class EntryActivity extends AppCompatActivity {
 
   private static final String HASHED_PIN = "pin";

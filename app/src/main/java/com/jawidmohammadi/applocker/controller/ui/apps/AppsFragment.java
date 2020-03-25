@@ -21,7 +21,7 @@ import com.jawidmohammadi.applocker.view.AppRecyclerAdapter;
 import java.util.ArrayList;
 
 /**
- * App
+ * App ViewModel connect with the repository to retrieve data from database it does not connect to the database directly.
  */
 public class AppsFragment extends Fragment {
 

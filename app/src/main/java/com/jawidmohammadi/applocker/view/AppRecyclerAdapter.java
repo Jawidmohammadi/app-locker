@@ -15,7 +15,10 @@ import com.jawidmohammadi.applocker.R;
 import com.jawidmohammadi.applocker.model.entity.App;
 import com.jawidmohammadi.applocker.view.AppRecyclerAdapter.Holder;
 import java.util.List;
-//created the recycler adapter to view list of apps in recycler view
+
+/**
+ * created the recycler adapter to view list of apps in recycler view
+ */
 public class AppRecyclerAdapter extends RecyclerView.Adapter<Holder> {
 
   private final OnLockChangedListener listener;

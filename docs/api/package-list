@@ -1,0 +1,12 @@
+com.jawidmohammadi.applocker
+com.jawidmohammadi.applocker.controller
+com.jawidmohammadi.applocker.controller.ui.apps
+com.jawidmohammadi.applocker.controller.ui.entry
+com.jawidmohammadi.applocker.controller.ui.locked
+com.jawidmohammadi.applocker.controller.ui.privacy
+com.jawidmohammadi.applocker.controller.ui.settings
+com.jawidmohammadi.applocker.model.dao
+com.jawidmohammadi.applocker.model.entity
+com.jawidmohammadi.applocker.model.repository
+com.jawidmohammadi.applocker.services
+com.jawidmohammadi.applocker.view
