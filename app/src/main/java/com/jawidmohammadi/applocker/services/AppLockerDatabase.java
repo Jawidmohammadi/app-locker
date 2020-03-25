@@ -14,6 +14,9 @@ import com.jawidmohammadi.applocker.model.entity.Attempt;
 import com.jawidmohammadi.applocker.services.AppLockerDatabase.Converters;
 import java.util.Date;
 
+/**
+ *
+ */
 @Database (
     entities = {App.class , Attempt.class},
     version = 1,

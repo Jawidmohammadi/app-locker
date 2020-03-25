@@ -19,6 +19,9 @@ import com.jawidmohammadi.applocker.R;
 import com.jawidmohammadi.applocker.controller.ui.apps.AppsViewModel;
 import com.jawidmohammadi.applocker.view.AppRecyclerAdapter;
 
+/**
+ * This is the main Activity from which all the fragments and activities in this app launches.
+ */
 public class MainActivity extends AppCompatActivity {
 
   private Switch lockSwitch;

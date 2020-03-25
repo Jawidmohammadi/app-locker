@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import com.google.android.material.textfield.TextInputEditText;
+import com.jawidmohammadi.applocker.controller.ui.apps.AppsViewModel;
 import java.util.Objects;
 
 public class PasswordDialog extends AppCompatDialogFragment {
@@ -38,7 +39,6 @@ private PasswordDialogListener listener;
           }
         })
         .setPositiveButton("Ok", new DialogInterface.OnClickListener(){
-
           @Override
           public void onClick(DialogInterface dialog, int which) {
 

@@ -26,12 +26,20 @@ import java.util.TreeSet;
 import java.util.zip.CheckedOutputStream;
 import javax.security.auth.login.LoginException;
 
+/**
+ * this class retrieve data from DAO database or any Web Services,
+ * for ViewModel to avoid directly have ViewModel connect to DAO and Entity classes.
+ */
 public class AppRepository {
 
   private final AppLockerDatabase database;
   private final Random rng;
   private final Context context;
 
+  /**
+   * this method uses when context is null it is going to throw a new illegalStateException.
+   * @param context
+   */
   public AppRepository(Context context) {
     if (context == null) {
       throw new IllegalStateException();
@@ -40,6 +48,7 @@ public class AppRepository {
     rng = new SecureRandom();
     database = AppLockerDatabase.getInstance();
   }
+
 
   public void logAttempt(App app, Timestamp timestamp, String password) {
     Attempt attempt = new Attempt();
@@ -50,6 +59,10 @@ public class AppRepository {
   }
   // TODO implement in app view model to invoke this methode in the repository to lock it.
 
+  /**
+   * This method retrieve set of the all apps from the device and from package manager.
+   * @return all apps
+   */
   public Single<Set<App>> getAll() {
     return database.getApplicationDao().select()
         .subscribeOn(Schedulers.io())
@@ -66,6 +79,14 @@ public class AppRepository {
         });
   }
 
+  /**
+   * This method Store the password for each app in the database but before storing just the password it self,
+   * the password get hashed and added some random generated latters and numbers to it (salt) that when it stored in the database
+   * it can be different from the other apps that have tha same password.
+   * @param pkg take String package name
+   * @param password take String password.
+   * @return hashed password
+   */
   public Completable lock(String pkg, String password)  {
     return Completable.fromSingle(
         database.getApplicationDao().select(pkg)
@@ -95,6 +116,13 @@ public class AppRepository {
     );
   }
 
+  /**
+   * we use completable method to sort the apps this method compare the entered password to the stored password
+   * if the matched it will allow user to enter the restricted app.
+   * @param app takes an app object.
+   * @param password takes a string password
+   * @return hashed password.
+   */
   public Completable unlock(App app, String password) {
     return Completable.fromAction(() -> {
       MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -110,6 +138,11 @@ public class AppRepository {
         .subscribeOn(Schedulers.computation());
   }
 
+  /**
+   * this method see if there is any app restricted if so it will delete it other wise does nothing.
+   * @param app takes an app object
+   * @return returns app.
+   */
   public Completable remove(App app){
     if (app.getId() != 0) {
       return Completable.fromSingle(

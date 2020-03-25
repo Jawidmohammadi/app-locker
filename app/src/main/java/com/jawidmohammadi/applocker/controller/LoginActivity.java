@@ -9,6 +9,9 @@ import com.jawidmohammadi.applocker.R;
 import com.jawidmohammadi.applocker.controller.ui.entry.EntryActivity;
 import com.jawidmohammadi.applocker.services.GoogleSignInService;
 
+/**
+ * This Activity allow user to sign in to the app using google authentication, use there credential and other profile fields.
+ */
 public class LoginActivity extends AppCompatActivity {
 
   private static final int LOGIN_REQUEST_CODE = 1000;

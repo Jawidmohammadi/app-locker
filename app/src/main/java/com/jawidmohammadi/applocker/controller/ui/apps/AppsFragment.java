@@ -10,15 +10,19 @@ import android.view.ViewGroup;
 import android.widget.Switch;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.jawidmohammadi.applocker.PasswordDialog;
 import com.jawidmohammadi.applocker.R;
 import com.jawidmohammadi.applocker.view.AppRecyclerAdapter;
 import java.util.ArrayList;
 
-
+/**
+ * App
+ */
 public class AppsFragment extends Fragment {
 
   private AppsViewModel appsViewModel;
@@ -58,6 +62,10 @@ public class AppsFragment extends Fragment {
             if (locked) {
               //TODO show dialog to get locking password. in the dialog the ok button should result in locking the app
               //the dialog should invoke appsViewModel.lock(app, password);
+//              DialogFragment newFragment = new PasswordDialog();
+//              AppsViewModel appsViewModel = new AppsViewModel(app, password);
+//              appsViewModel.lock(app, password);
+//              newFragment.show(getParentFragmentManager(), "missiles");
             } else {
               appsViewModel.unlock(app);
             }
