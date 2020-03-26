@@ -12,14 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import com.jawidmohammadi.applocker.controller.MainActivity;
+import com.jawidmohammadi.applocker.controller.ui.apps.AppsFragment;
 import com.jawidmohammadi.applocker.controller.ui.apps.AppsViewModel;
 import com.jawidmohammadi.applocker.model.entity.App;
+import com.jawidmohammadi.applocker.view.AppRecyclerAdapter;
 import java.util.Objects;
 
 /**
