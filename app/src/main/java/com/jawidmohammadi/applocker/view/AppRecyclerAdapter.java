@@ -79,7 +79,10 @@ public class AppRecyclerAdapter extends RecyclerView.Adapter<Holder> {
 
   }
 
+  @FunctionalInterface
   public interface OnLockChangedListener {
     void changeState(App app, boolean locked);
   }
+
+
 }

@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * the setting view model extends viewModel and it provide live data to the ui fragments.
+ */
 public class SettingsViewModel extends ViewModel {
 
 

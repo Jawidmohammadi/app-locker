@@ -16,7 +16,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.jawidmohammadi.applocker.R;
 
-
 public class PrivacyFragment extends Fragment implements OnClickListener {
 
   private Button lockFrequency;

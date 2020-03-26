@@ -34,10 +34,13 @@ public class AppsFragment extends Fragment {
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-
-
   }
 
+  /**
+   * creates and returns the view hierarchy associated with the fragment.
+   * this method shows the list of app in the fragment
+   * and if the screen was portrait it will show two columns if it was landscape it is going to show 3 columns.
+   */
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
@@ -49,9 +52,16 @@ public class AppsFragment extends Fragment {
       appList.setLayoutManager(new GridLayoutManager(getContext(), 3));
     }
 
+
+//    Switch lock = root.findViewById(R.id.lock_switch);
+//    lock.setOnCheckedChangeListener((v) -> lock(null);
     return root;
   }
 
+  /**
+   *  this layout is where you initialize your activity.
+   *  and the password dialog pops up to enter the password if user wanted to lock an app in the list.
+   */
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
@@ -66,6 +76,7 @@ public class AppsFragment extends Fragment {
 //              AppsViewModel appsViewModel = new AppsViewModel(app, password);
 //              appsViewModel.lock(app, password);
 //              newFragment.show(getParentFragmentManager(), "missiles");
+
             } else {
               appsViewModel.unlock(app);
             }

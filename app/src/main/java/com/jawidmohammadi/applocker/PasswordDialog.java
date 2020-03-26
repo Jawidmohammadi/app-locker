@@ -17,12 +17,20 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.jawidmohammadi.applocker.controller.ui.apps.AppsViewModel;
 import java.util.Objects;
 
+/**
+ * this is the password popup dialog where user can enter there password and set the restriction for there apps.
+ */
 public class PasswordDialog extends AppCompatDialogFragment {
 
 private TextInputEditText editTextPassword;
 private PasswordDialogListener listener;
 
-
+  /**
+   * this method show the dialog and it has two buttons
+   * this specify what each positive and negative buttons does.
+   * @param savedInstanceState bundle saveInstanceState
+   * @return dialog.
+   */
   @NonNull
   @Override
   public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {

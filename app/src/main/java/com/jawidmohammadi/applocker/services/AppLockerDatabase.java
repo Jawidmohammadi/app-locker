@@ -15,7 +15,7 @@ import com.jawidmohammadi.applocker.services.AppLockerDatabase.Converters;
 import java.util.Date;
 
 /**
- *
+ * The database contain two tables of our classes name app and attempt.
  */
 @Database (
     entities = {App.class , Attempt.class},
@@ -50,13 +50,14 @@ public abstract class AppLockerDatabase extends RoomDatabase {
         .build();
   }
 
+  /**
+   * this create
+   */
   public static class Converters {
-
     @TypeConverter
     public static Long formDate(Date date){
       return (date != null) ? date.getTime() : null;
     }
-
     @TypeConverter
     public static Date formLong(Long value){
       return (value != null) ? new Date(value) : null;
