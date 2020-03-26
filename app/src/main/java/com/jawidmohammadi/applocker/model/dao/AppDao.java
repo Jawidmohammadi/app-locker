@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * This Interface retrieve all the data from the SQLite database that room created in our entity classes.
+ * @author Jawid Mohammadi
  */
 @Dao
 public interface AppDao {

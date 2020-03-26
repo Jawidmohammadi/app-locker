@@ -25,6 +25,7 @@ import java.util.Objects;
 /**
  * this is the password popup dialog where user can enter there password and set the restriction for
  * there apps.
+ * @author Jawid Mohammadi
  */
 public class PasswordDialogFragment extends DialogFragment {
 

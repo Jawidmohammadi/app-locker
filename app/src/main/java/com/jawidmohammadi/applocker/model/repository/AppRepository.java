@@ -62,6 +62,7 @@ public class AppRepository {
   /**
    * This method retrieve set of the all apps from the device and from package manager.
    * @return all apps
+   * @author Jawid Mohammadi
    */
   public Single<Set<App>> getAll() {
     return database.getApplicationDao().select()

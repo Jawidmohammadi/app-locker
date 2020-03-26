@@ -6,6 +6,10 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 
+/**
+ * This interface connect with the entity classes and retrieve data from RoomDatabase
+ * @author Jawid Mohammadi
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(

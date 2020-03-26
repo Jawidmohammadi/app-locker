@@ -16,6 +16,7 @@ import java.util.Date;
 
 /**
  * The database contain two tables of our classes name app and attempt.
+ * @author Jawid Mohammadi
  */
 @Database (
     entities = {App.class , Attempt.class},

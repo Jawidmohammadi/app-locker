@@ -11,6 +11,7 @@ import androidx.room.PrimaryKey;
 /**
  * This is our Entity Class that Room Creates a SQLite database for this class fields
  * each Entity represent a table in SQLite database.
+ * @author Jawid Mohammadi
  */
 @Entity(
     indices = {

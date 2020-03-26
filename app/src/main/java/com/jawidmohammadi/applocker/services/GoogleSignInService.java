@@ -13,6 +13,10 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.jawidmohammadi.applocker.BuildConfig;
 
+/**
+ * Google authentication services to authorize the user and then let him access the app.
+ * @author Jawid Mohammadi
+ */
 public class GoogleSignInService {
 
   private static Application context;

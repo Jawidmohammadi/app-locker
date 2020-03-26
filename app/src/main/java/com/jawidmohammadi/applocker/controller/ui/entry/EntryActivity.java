@@ -19,7 +19,10 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Random;
 
-
+/**
+ * App Authentication when a user want to enter the app it will ask for the password that they created last time.
+ * @author Jawid Mohammadi
+ */
 public class EntryActivity extends AppCompatActivity {
 
   private static final String HASHED_PIN = "pin";
